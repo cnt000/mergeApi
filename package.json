@@ -3,13 +3,28 @@
   "version": "1.0.0",
   "description": "exemple merging api",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cnt000/mergeApi.git"
+  },
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/collect.test.js",
+    "deploy": "sh .env && dpl"
   },
   "author": "Edoardo Gargano",
   "license": "ISC",
+  "files_to_deploy": [
+    "package.json",
+    "index.js",
+    "lambdas/",
+    "lib/",
+    "node_modules/"
+  ],
   "dependencies": {
     "node-fetch": "^2.0.0"
+  },
+  "devDependencies": {
+    "dpl": "^3.8.0"
   }
 }
